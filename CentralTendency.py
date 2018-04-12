@@ -1,4 +1,6 @@
 '''
+Central tendencies are those operations design to find the center of a data set. 
+'''
 class mean:
 
     def __init__(self, *args):
@@ -28,9 +30,9 @@ class mean:
 if __name__ == '__main__':
     d = mean(9.3,11,28.7,7.6,6.5,8.7,7.4,7.8,6.7,9.5)
     print(d)
-'''
+
 #=================================================================
-'''
+
 class median:
 
     def __init__(self, *args): #input as many observations as needed
@@ -66,46 +68,3 @@ if __name__ == '__main__':
     d = median(9.3,11,28.7,7.6,6.5,8.7,7.4,7.8,6.7,9.5)
     print(d)
 
-'''
-#===========================================================
-'''
-class mode:
-
-    def __init__(self, *args):
-        self.arg = args
-
-    def getObservations(self):
-        obaservations = []
-        for item in self.arg:
-            obaservations.append(item)
-        obaservations.sort()
-        return obaservations
-
-    def n(self):
-        n = len(self.getObservations())
-        return n
-
-    def getMode(self):
-        counter = 1
-        mod = []
-        mode = []
-        for i in self.getObservations():
-            if i not in mod:
-                mod.append(i)
-        for j in self.getObservations():
-            if j not in mode:
-                mode = [{j:counter}]
-            else:
-                mode = [{j:counter+1}]
-
-        return mode
-
-
-
-    def __str__(self):
-        return '{}'.format(self.getObservations())
-
-if __name__ == '__main__':
-    d = mode(9.3,11,28.7,7.6,6.5,8.7,7.4,7.8,6.7,9.5)
-    print(d)
-'''
